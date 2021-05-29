@@ -22,9 +22,9 @@ If you are on a Mac M1, use the --platform linux/amd64 option with the command a
 > * check that dbt is properly instlaled
 >       dbt --version
 > * try creating/initialising a new project
->       cd ~ && dbt init my-first-dbt-proj
+>>      cd ~ && dbt init my-first-dbt-proj
 > * check that a default profile has been created
->       cat ~/.dbt/profiles.yml
+>>      cat ~/.dbt/profiles.yml
 > * NOTE: some additional steps to get sasl package installed (if you want to install the spark profile)
 >>      apt install g++ -y
 >>      apt install libsasl2-dev -y
