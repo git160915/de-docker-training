@@ -1,0 +1,48 @@
+version: "3.7"
+services:
+
+  postgres-db:
+    image: postgres
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - 5433:5432
+    volumes:
+      - data-volume:/datalake/source
+
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8090:8080
+    volumes:
+      - data-volume:/datalake/source
+
+  mysql-db:
+    image: debezium/example-mysql:1.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: debezium
+      MYSQL_USER: mysqluser
+      MYSQL_PASSWORD: mysqlpw
+    ports:
+      - 3306:3306
+    volumes:
+      - data-volume:/datalake/source
+
+  dbt-master:
+    build:
+      context: ./src/docker
+      dockerfile: dbt-base.Dockerfile
+    image: dbt-base-amd64
+    container_name: dbt-master
+    volumes:
+      - ./.spark-warehouse/:/spark-warehouse/
+      - data-volume:/datalake/source
+
+volumes:
+  data-volume:
+    external: true

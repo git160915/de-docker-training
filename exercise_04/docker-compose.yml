@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+
+  dbt-base:
+    build:
+      context: ./src
+      dockerfile: dbt-base.Dockerfile
+    image: dbt-base-amd64
+    container_name: dbt-base
