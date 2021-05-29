@@ -1,31 +1,16 @@
 # de-docker-training
-learning docker with some simple examples
+example_01 deals with just pulling and running a simple ubuntu container and run a simple apt update and install
 
-## dependencies
-### docker
+#### pulling a container
+```
+docker run -it --name my-ubuntu ubuntu
 
-#### Windows - Windows Desktop
+-i: tells docker to run in interactive mode
+-t: tells it to allocate a terminal
 ```
-Link to installation page - https://docs.docker.com/docker-for-windows/install/
-Link to installation file - https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe
-```
-#### linux - ubuntu
-```
-sudo apt-get install -y docker.io
-```
+NOTE:
+- This will pull the "latest" version of ubuntu if you don't specify a version.  To specify a version add in ":version" after the image name, e.g. ...ubuntu:18.04
 
-***
-
-### docker-compose version
-Instructions for [installing docker-compose](https://docs.docker.com/compose/install/)
-
-#### Windows Desktop
-```
-Docker Desktop for Windows includes Compose along with other Docker apps, so most Windows users do not need to install Compose separately. For install instructions, see https://docs.docker.com/docker-for-windows/install/
-```
-
-#### linux
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-```
+#### some switches to remember
+> * Noticed how after you excited the container "stopped"?  try using the "-d" switch in your run command to run it in "detached" mode which heads that even if you are not logged in, the container is still running
+> * If you wanted to only run in foreground mode and remove the container automatically after exiting the container, then use the "-rm" option with "docker run"
