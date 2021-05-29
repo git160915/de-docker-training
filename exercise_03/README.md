@@ -13,7 +13,7 @@ example_03 will have us create a Docker file to automatically build dbt
 > * this will build an image with the name dbt-base-amd64.  NOTE: for Mac M1, add "--platform linux/amd64" to the "docker build..." command or inside the *Dockerfile, update the FROM line to the following:
 >       FROM --platform=linux/amd64 ubuntu:${base_image_version}
 > * now lets run the newly created image that contains dbt installed (NOTE: for Mac M1, add "--platform linux/amd64" to the run command)
->>      docker run -it --name dbt-base --platform linux/amd64 dbt-base-amd64
+>>      docker run -itd --name dbt-base --platform linux/amd64 dbt-base-amd64
 > * check the dbt version and also the default profile is there
 >>      dbt --version
 >>      cd ~ && cat .dbt/profiles.yml
