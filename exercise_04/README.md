@@ -10,7 +10,7 @@ example_04 will build and run docker image with docker-compose
 >>      docker compose build
 > * this will build an image with the name dbt-base using the Dockerfile from exercise_03
 > * now lets run the newly created image that contains dbt installed (NOTE: for Mac M1, add "--platform linux/amd64" to the run command)
->>      docker compose up
+>>      docker compose up -d
 > * check the dbt version and also the default profile is there
 >>      dbt --version
 >>      cd ~ && cat .dbt/profiles.yml
