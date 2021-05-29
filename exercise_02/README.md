@@ -28,7 +28,7 @@ If you are on a Mac M1, use the --platform linux/amd64 option with the command a
 > * NOTE: some additional steps to get sasl package installed (if you want to install the spark profile)
 >>      apt install g++ -y
 >>      apt install libsasl2-dev -y
->>      pip install sasl -y
+>>      pip install sasl
 > * now exit the container and it should end up in stopped state.  But what do we do now if we want to remove the container but be able to re-use later, on another machine or share with someone else?  Well, lets "commit" it
 > * execute this command to find the container id.  look for container "my-ubuntu"
 >>      docker ps -a
