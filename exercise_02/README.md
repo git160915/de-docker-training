@@ -14,8 +14,7 @@ If you are on a Mac M1, use the --platform linux/amd64 option with the command a
 >>      apt update
 >>      apt upgrade
 > * NOTE: you may encounter issues with installing git, if you do encounter issues with installing git, try these instructions:
-> * Khi apt install git thì (trên một số máy windows như em) có thể gặp lỗi thiếu lib dependencies perl-base, thì dùng giải pháp trong link này ạ:
->       https://askubuntu.com/questions/977767/cant-install-git-perl-on-ubuntu-16-04-due-to-broken-packages
+> * Khi apt install git thì (trên một số máy windows như em) có thể gặp lỗi thiếu lib dependencies perl-base, thì dùng giải pháp trong link này ạ: https://askubuntu.com/questions/977767/cant-install-git-perl-on-ubuntu-16-04-due-to-broken-packages
 >>      apt install git libpq-dev python-dev python3-pip python3-venv -y
 >>      apt remove python-cffi
 >>      pip install --upgrade cffi
