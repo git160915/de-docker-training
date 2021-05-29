@@ -31,17 +31,17 @@ If you are on a Mac M1, use the --platform linux/amd64 option with the command a
 >>      pip install sasl -y
 > * now exit the container and it should end up in stopped state.  But what do we do now if we want to remove the container but be able to re-use later, on another machine or share with someone else?  Well, lets "commit" it
 > * execute this command to find the container id.  look for container "my-ubuntu"
->       docker ps -a
+>>      docker ps -a
 > * then run the following command to commit and save the container state to an image called "my-ubuntu-dbt" or whatever name you want to call it
->       docker commit <CONTAINER ID> my-ubuntu-dbt
+>>      docker commit <CONTAINER ID> my-ubuntu-dbt
 > * check that the image has been created by running the following command and looking for the image name in the list of images you have, "my-ubuntu-dbt" in this case
->       docker images
+>>      docker images
 > * let remove the "my-ubuntu" container you have currently instantiated
->       docker rm my-ubuntu
+>>      docker rm my-ubuntu
 > * now lets run the newly created image that contains dbt installed (NOTE: for Mac M1, add "--platform linux/amd64" to the run command)
->       docker run -it --name my-ubuntu-dbt my-ubuntu-dbt
+>>      docker run -it --name my-ubuntu-dbt my-ubuntu-dbt
 > * check the dbt version and also the default profile is there
->       dbt --version
->       cd ~ && cat .dbt/profiles.yml
+>>      dbt --version
+>>      cd ~ && cat .dbt/profiles.yml
 
 And that is it for this exercise
