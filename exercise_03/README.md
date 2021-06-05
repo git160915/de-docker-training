@@ -16,5 +16,8 @@ example_03 will have us create a Docker file to automatically build dbt
 >>      docker run -itd --name dbt-base --platform linux/amd64 dbt-base-amd64
 > * check the dbt version and also the default profile is there
 >>      dbt --version
+>>      cd ~
+>>      dbt init first-dbt-proj
+>>      cat ~/.dbt/profiles.yml
 
 And that is it for this exercise
