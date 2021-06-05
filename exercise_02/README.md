@@ -44,6 +44,8 @@ If you are on a Mac M1, use the --platform linux/amd64 option with the command a
 >>      docker run -it --name my-ubuntu-dbt my-ubuntu-dbt
 > * check the dbt version and also the default profile is there
 >>      dbt --version
->>      cd ~ && cat .dbt/profiles.yml
+>>      cd ~
+>>      dbt init first-dbt-proj
+>>      cat .dbt/profiles.yml
 
 And that is it for this exercise
