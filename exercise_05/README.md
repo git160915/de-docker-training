@@ -1,31 +1,20 @@
 # de-docker-training
-learning docker with some simple examples
+example_04 will build and run docker image with docker-compose
 
-## dependencies
-### docker
+#### Look at the docker-compose.yml file
+```
+"Use your fav edit" to open this file in the: exercse_04/docker-compose.yml
+```
+#### lets build image with dbt from previous exercise_03...yay! :-)
+> * lets run the command to build the image and start up a container
+>>      docker compose build
+> * this will build an image with the name dbt-base using the Dockerfile from exercise_03
+> * now lets run the newly created image that contains dbt installed (NOTE: for Mac M1, add "--platform linux/amd64" to the run command)
+>>      docker compose up -d
+> * check the dbt version and also the default profile is there
+>>      dbt --version
+>>      cd ~ && cat .dbt/profiles.yml
+> * when we are done, lets shut it down from another terminal (use "docker compose rm" if the images have already stopped)
+>>      docker compose down
 
-#### Windows - Windows Desktop
-```
-Link to installation page - https://docs.docker.com/docker-for-windows/install/
-Link to installation file - https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe
-```
-#### linux - ubuntu
-```
-sudo apt-get install -y docker.io
-```
-
-***
-
-### docker-compose version
-Instructions for [installing docker-compose](https://docs.docker.com/compose/install/)
-
-#### Windows Desktop
-```
-Docker Desktop for Windows includes Compose along with other Docker apps, so most Windows users do not need to install Compose separately. For install instructions, see https://docs.docker.com/docker-for-windows/install/
-```
-
-#### linux
-```
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-```
+And that is it for this exercise

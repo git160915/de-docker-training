@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+
+  dbt-base:
+    build:
+      context: ./src
+      dockerfile: dbt-base.Dockerfile
+    image: dbt-base-amd64
+    container_name: dbt-base
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./.data-warehouse/:/data-warehouse/
+
+  postgres-db:
+    image: postgres
+    container_name: postgres-db
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - ./.data-warehouse/:/data-warehouse/
+  adminer:
+    image: adminer
+    container_name: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - ./.data-warehouse/:/data-warehouse/
