@@ -46,6 +46,6 @@ If you are on a Mac M1, use the --platform linux/amd64 option with the command a
 >>      dbt --version
 >>      cd ~
 >>      dbt init first-dbt-proj
->>      cat .dbt/profiles.yml
+>>      cat ~/.dbt/profiles.yml
 
 And that is it for this exercise
