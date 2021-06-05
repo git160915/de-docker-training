@@ -7,3 +7,5 @@ services:
       dockerfile: dbt-base.Dockerfile
     image: dbt-base-amd64
     container_name: dbt-base
+    tty: true
+    stdin_open: true

@@ -12,4 +12,4 @@ RUN apt update && \
 
 # -- Runtime
 
-CMD tail -f /dev/null
+CMD ["bash"]

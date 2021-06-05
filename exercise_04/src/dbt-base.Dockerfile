@@ -1,5 +1,5 @@
 ARG base_image_version=latest
-FROM ubuntu:${base_image_version}
+FROM --platform=linux/amd64 ubuntu:${base_image_version}
 
 # -- dbt install
 
@@ -12,4 +12,4 @@ RUN apt update && \
 
 # -- Runtime
 
-CMD tail -f /dev/null
+CMD ["bash"]
