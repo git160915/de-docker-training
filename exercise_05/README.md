@@ -37,7 +37,7 @@ Note:
 >>            password: example
 >>            port: 5432
 >>            dbname: postgres
->>            schema: public
+>>            schema: jaffle_shop
 >>            threads: 1
 > * go to the jaffle_shop folder
 >>      cd jaffle_shop
