@@ -32,7 +32,7 @@ jaffle_shop:
       host: postgres-db
       user: postgres
       password: example
-      port: 5433
+      port: 5432
       dbname: postgres
-      schema: public
+      schema: jaffle_shop
       threads: 1
