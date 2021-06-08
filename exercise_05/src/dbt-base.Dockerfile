@@ -1,5 +1,5 @@
 ARG base_image_version=latest
-FROM ubuntu:${base_image_version}
+FROM --platform=linux/amd64 ubuntu:${base_image_version}
 
 # -- dbt install
 
