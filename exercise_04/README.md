@@ -13,6 +13,9 @@ example_04 will build and run docker image with docker-compose
 >>      docker compose up -d
 > * check the dbt version and also the default profile is there
 >>      dbt --version
+>>      cd ~
+>>      dbt init first-dbt-proj
+>>      cat ~/.dbt/profiles.yml
 > * when we are done, lets shut it down from another terminal (use "docker compose rm" if the images have already stopped)
 >>      docker compose down
 
